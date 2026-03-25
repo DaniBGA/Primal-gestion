@@ -13,5 +13,5 @@ UPDATE_METADATA_URL = ""
 # Alternativa para actualizar mediante pushes en GitHub:
 # publicar update/latest.json en tu repo y configurar owner/repo.
 # Ejemplo: "tuusuario/primal-gestion"
-GITHUB_REPO = ""
+GITHUB_REPO = "DaniBGA/Primal-gestion"
 GITHUB_BRANCH = "main"
