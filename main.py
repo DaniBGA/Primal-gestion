@@ -128,8 +128,10 @@ def main() -> None:
     if icon_path.exists():
         app.setWindowIcon(QIcon(str(icon_path)))
 
-    app.setStyleSheet(
-        """
+    up_arrow_icon = get_resource_path("assets", "icons", "spin_up.svg").as_posix()
+    down_arrow_icon = get_resource_path("assets", "icons", "spin_down.svg").as_posix()
+
+    stylesheet = """
         QWidget {
             background-color: #2f2f33;
             color: #f4f4f4;
@@ -213,18 +215,14 @@ def main() -> None:
             background-color: #cf2e39;
         }
         QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
-            width: 0px;
-            height: 0px;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 8px solid #ffffff;
+            image: url("__SPIN_UP_ICON__");
+            width: 10px;
+            height: 10px;
         }
         QSpinBox::down-arrow, QDoubleSpinBox::down-arrow {
-            width: 0px;
-            height: 0px;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 8px solid #ffffff;
+            image: url("__SPIN_DOWN_ICON__");
+            width: 10px;
+            height: 10px;
         }
         QTableWidget {
             background-color: #35353b;
@@ -246,7 +244,9 @@ def main() -> None:
             background-color: #2f2f33;
         }
         """
-    )
+    stylesheet = stylesheet.replace("__SPIN_UP_ICON__", up_arrow_icon)
+    stylesheet = stylesheet.replace("__SPIN_DOWN_ICON__", down_arrow_icon)
+    app.setStyleSheet(stylesheet)
 
     window = MainWindow()
     window.show()
