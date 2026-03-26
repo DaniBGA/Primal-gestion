@@ -1,6 +1,7 @@
 import sys
 import os
 import subprocess
+from pathlib import Path
 
 from PyQt6.QtCore import QTimer, QUrl
 from PyQt6.QtGui import QAction, QDesktopServices, QIcon
@@ -104,15 +105,40 @@ class MainWindow(QMainWindow):
         try:
             self._launch_installer_after_exit(str(installer_path))
         except OSError as exc:
-            QMessageBox.warning(self, "Actualizaciones", f"No se pudo abrir el instalador: {exc}")
+            self._show_manual_installer_fallback(installer_path, launch_error=str(exc))
             return
 
-        QMessageBox.information(
-            self,
-            "Actualizacion",
-            "Se abrira el instalador para actualizar Primal Gestion. La aplicacion se cerrara.",
-        )
+        self._show_manual_installer_fallback(installer_path)
         QApplication.quit()
+
+    def _show_manual_installer_fallback(self, installer_path: Path, launch_error: str | None = None) -> None:
+        message = QMessageBox(self)
+        message.setWindowTitle("Actualizacion")
+        message.setIcon(QMessageBox.Icon.Information)
+
+        text = (
+            "La actualizacion se descargo correctamente. "
+            "Si el instalador no se abre automaticamente, ejecútalo manualmente desde la carpeta descargada."
+        )
+        if launch_error:
+            text = (
+                "No se pudo iniciar el instalador automaticamente. "
+                "Puedes ejecutarlo manualmente desde la carpeta descargada."
+            )
+        message.setText(text)
+
+        details = f"Instalador:\n{installer_path}"
+        if launch_error:
+            details += f"\n\nDetalle del error:\n{launch_error}"
+        message.setInformativeText(details)
+
+        open_folder_button = message.addButton("Abrir carpeta del instalador", QMessageBox.ButtonRole.ActionRole)
+        continue_button = message.addButton("Continuar", QMessageBox.ButtonRole.AcceptRole)
+        message.setDefaultButton(continue_button)
+        message.exec()
+
+        if message.clickedButton() == open_folder_button:
+            QDesktopServices.openUrl(QUrl.fromLocalFile(str(installer_path.parent)))
 
     @staticmethod
     def _launch_installer_after_exit(installer_path: str) -> None:
