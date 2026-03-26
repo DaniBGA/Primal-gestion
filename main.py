@@ -165,17 +165,21 @@ class MainWindow(QMainWindow):
 
     @staticmethod
     def _launch_installer_after_exit(installer_path: str) -> None:
-        # Lanza el instalador desde cmd desacoplado con una espera corta para que la app cierre.
-        # Evita depender del nombre del proceso (python.exe vs PrimalGestion.exe).
-        command = f'timeout /t 3 /nobreak >NUL & start "" "{installer_path}"'
-        MainWindow._log_update_event(f"Schedule launcher via cmd | command={command}")
+        # Lanza el instalador en un proceso independiente con una espera corta.
+        # Usar -LiteralPath evita problemas de parseo de rutas en cmd/start.
+        escaped_installer = installer_path.replace("'", "''")
+        command = (
+            "Start-Sleep -Seconds 3; "
+            f"Start-Process -LiteralPath '{escaped_installer}'"
+        )
+        MainWindow._log_update_event(f"Schedule launcher via powershell | command={command}")
 
         creation_flags = 0
         for flag_name in ("CREATE_NO_WINDOW", "CREATE_NEW_PROCESS_GROUP", "DETACHED_PROCESS"):
             creation_flags |= getattr(subprocess, flag_name, 0)
 
         subprocess.Popen(
-            ["cmd.exe", "/c", command],
+            ["powershell", "-NoProfile", "-WindowStyle", "Hidden", "-Command", command],
             shell=False,
             creationflags=creation_flags,
         )
