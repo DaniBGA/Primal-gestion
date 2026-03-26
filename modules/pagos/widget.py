@@ -76,7 +76,17 @@ class PagosWidget(QWidget):
         self.table.setHorizontalHeaderLabels(
             ["Nombre y apellido", "Monto", "Fecha de pago", "Fecha proximo pago", "Estado"]
         )
-        self.table.horizontalHeader().setStretchLastSection(True)
+        header = self.table.horizontalHeader()
+        header.setStretchLastSection(False)
+        header.setSectionResizeMode(0, header.ResizeMode.Stretch)
+        header.setSectionResizeMode(1, header.ResizeMode.Fixed)
+        header.setSectionResizeMode(2, header.ResizeMode.Fixed)
+        header.setSectionResizeMode(3, header.ResizeMode.Fixed)
+        header.setSectionResizeMode(4, header.ResizeMode.Fixed)
+        self.table.setColumnWidth(1, 130)
+        self.table.setColumnWidth(2, 140)
+        self.table.setColumnWidth(3, 170)
+        self.table.setColumnWidth(4, 120)
         self.table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
         root.addWidget(self.table)
 
@@ -180,7 +190,11 @@ class PagosWidget(QWidget):
             )
             self.table.setItem(row_idx, 4, QTableWidgetItem(status))
 
-        self.table.resizeColumnsToContents()
+        # Keep stable fixed widths even when there are no rows loaded.
+        self.table.setColumnWidth(1, 130)
+        self.table.setColumnWidth(2, 140)
+        self.table.setColumnWidth(3, 170)
+        self.table.setColumnWidth(4, 120)
 
     @staticmethod
     def _compute_status(next_payment: date, today: date, upcoming_limit: date) -> str:

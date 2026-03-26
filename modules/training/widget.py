@@ -2,7 +2,8 @@ from __future__ import annotations
 
 from datetime import datetime
 
-from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtCore import Qt, QTimer, QUrl
+from PyQt6.QtMultimedia import QAudioOutput, QMediaPlayer
 from PyQt6.QtWidgets import (
     QComboBox,
     QFormLayout,
@@ -19,6 +20,7 @@ from PyQt6.QtWidgets import (
 
 from db.database import SessionLocal
 from db.models import Ejercicio, SesionEntrenamiento
+from core.paths import get_resource_path
 
 
 class TrainingWidget(QWidget):
@@ -32,9 +34,33 @@ class TrainingWidget(QWidget):
         self.remaining_seconds = 0
         self.current_exercise_id: int | None = None
         self.session_start: datetime | None = None
+        self._countdown_sound_played = False
+
+        self._start_audio_output = QAudioOutput(self)
+        self._start_player = QMediaPlayer(self)
+        self._start_player.setAudioOutput(self._start_audio_output)
+
+        self._countdown_audio_output = QAudioOutput(self)
+        self._countdown_player = QMediaPlayer(self)
+        self._countdown_player.setAudioOutput(self._countdown_audio_output)
+
+        self._configure_sounds()
 
         self._build_ui()
         self.load_exercises()
+
+    def _configure_sounds(self) -> None:
+        start_sound = get_resource_path("assets", "sounds", "Air Horn Sound Effect.mp3")
+        countdown_sound = get_resource_path(
+            "assets",
+            "sounds",
+            "3 Seconds Timer #shorts #youtubeshorts #countdown.mp3",
+        )
+
+        if start_sound.exists():
+            self._start_player.setSource(QUrl.fromLocalFile(str(start_sound)))
+        if countdown_sound.exists():
+            self._countdown_player.setSource(QUrl.fromLocalFile(str(countdown_sound)))
 
     def _build_ui(self) -> None:
         root = QVBoxLayout(self)
@@ -166,6 +192,7 @@ class TrainingWidget(QWidget):
         self.total_seconds = int(exercise.duracion_segundos)
         self.remaining_seconds = self.total_seconds
         self.session_start = None
+        self._countdown_sound_played = False
         self.timer.stop()
         self.selected_desc.setPlainText(exercise.descripcion or "Sin descripcion")
         self._update_timer_label()
@@ -198,6 +225,7 @@ class TrainingWidget(QWidget):
         self.total_seconds = 0
         self.remaining_seconds = 0
         self.selected_desc.clear()
+        self._countdown_sound_played = False
         self.load_exercises()
 
     def start_timer(self) -> None:
@@ -210,6 +238,10 @@ class TrainingWidget(QWidget):
 
         if self.session_start is None:
             self.session_start = datetime.now()
+            self._countdown_sound_played = False
+            if self._start_player.source().isValid():
+                self._start_player.stop()
+                self._start_player.play()
 
         self.timer.start()
 
@@ -220,6 +252,7 @@ class TrainingWidget(QWidget):
         self.timer.stop()
         self.remaining_seconds = self.total_seconds
         self.session_start = None
+        self._countdown_sound_played = False
         self._update_timer_label()
 
     def _tick(self) -> None:
@@ -230,9 +263,16 @@ class TrainingWidget(QWidget):
         self.remaining_seconds -= 1
         self._update_timer_label()
 
+        if self.remaining_seconds == 4 and not self._countdown_sound_played:
+            self._countdown_sound_played = True
+            if self._countdown_player.source().isValid():
+                self._countdown_player.stop()
+                self._countdown_player.play()
+
         if self.remaining_seconds == 0:
             self.timer.stop()
             self._save_training_session()
+            self._countdown_sound_played = False
             QMessageBox.information(self, "Completado", "Ejercicio finalizado.")
 
     def _save_training_session(self) -> None:

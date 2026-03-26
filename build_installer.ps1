@@ -23,9 +23,17 @@ if ($LASTEXITCODE -ne 0) {
     throw 'Fallo la compilacion del instalador. Revisa el log de Inno Setup.'
 }
 
-if ($env:SIGN_PFX_PATH -and $env:SIGN_PFX_PASSWORD) {
-    Write-Host 'Firmando digitalmente PrimalGestionSetup.exe...'
-    .\tools\sign_file.ps1 -FilePath .\dist\installer\PrimalGestionSetup.exe -PfxPath $env:SIGN_PFX_PATH -PfxPassword $env:SIGN_PFX_PASSWORD
+$setupFile = Get-ChildItem .\dist\installer -Filter "PrimalGestionSetup_*.exe" |
+    Sort-Object LastWriteTime -Descending |
+    Select-Object -First 1
+
+if (-not $setupFile) {
+    throw 'No se encontro instalador generado en dist\\installer.'
 }
 
-Write-Host 'Instalador generado en dist\\installer\\PrimalGestionSetup.exe'
+if ($env:SIGN_PFX_PATH -and $env:SIGN_PFX_PASSWORD) {
+    Write-Host "Firmando digitalmente $($setupFile.Name)..."
+    .\tools\sign_file.ps1 -FilePath $setupFile.FullName -PfxPath $env:SIGN_PFX_PATH -PfxPassword $env:SIGN_PFX_PASSWORD
+}
+
+Write-Host "Instalador generado en: $($setupFile.FullName)"

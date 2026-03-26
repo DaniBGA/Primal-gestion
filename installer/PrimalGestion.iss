@@ -1,15 +1,17 @@
 ; Inno Setup script para Primal Gestion
 
+#define MyAppVersion "1.0.2"
+
 [Setup]
 AppId={{A5D4F8AF-3CA5-49EE-A2C2-8A1A0F6E2D91}
 AppName=Primal Gestion
-AppVersion=1.0.0
+AppVersion={#MyAppVersion}
 AppPublisher=Primal
 DefaultDirName={autopf}\Primal Gestion
 DefaultGroupName=Primal Gestion
 DisableProgramGroupPage=yes
 OutputDir=..\dist\installer
-OutputBaseFilename=PrimalGestionSetup
+OutputBaseFilename=PrimalGestionSetup_{#MyAppVersion}
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
