@@ -1,6 +1,8 @@
 import sys
 import os
 import subprocess
+import tempfile
+from pathlib import Path
 
 from PyQt6.QtCore import QTimer, QUrl
 from PyQt6.QtGui import QAction, QDesktopServices, QIcon
@@ -117,19 +119,36 @@ class MainWindow(QMainWindow):
     @staticmethod
     def _launch_installer_after_exit(installer_path: str) -> None:
         current_pid = os.getpid()
-        escaped_installer = installer_path.replace("'", "''")
-        command = (
-            f"Wait-Process -Id {current_pid}; "
-            f"Start-Process -FilePath '{escaped_installer}'"
-        )
-
+        
+        # Crear un script batch que espere a que la app se cierre y luego ejecute el instalador
+        batch_content = f"""@echo off
+timeout /t 1 /nobreak
+tasklist /fi "PID eq {current_pid}" 2>NUL | find /I /N "python.exe" >NUL
+if "%ERRORLEVEL%"=="0" goto :wait
+:start_installer
+start "" "{installer_path}"
+exit /b
+:wait
+timeout /t 1 /nobreak
+tasklist /fi "PID eq {current_pid}" 2>NUL | find /I /N "python.exe" >NUL
+if "%ERRORLEVEL%"=="0" goto :wait
+goto :start_installer
+"""
+        
+        # Guardar el batch en temp
+        temp_dir = Path(tempfile.gettempdir()) / "PrimalGestionUpdates"
+        temp_dir.mkdir(parents=True, exist_ok=True)
+        batch_file = temp_dir / "update_launcher.bat"
+        batch_file.write_text(batch_content, encoding='utf-8')
+        
+        # Ejecutar el batch sin mostrar ventana
         creation_flags = 0
         for flag_name in ("CREATE_NO_WINDOW", "CREATE_NEW_PROCESS_GROUP", "DETACHED_PROCESS"):
             creation_flags |= getattr(subprocess, flag_name, 0)
-
+        
         subprocess.Popen(
-            ["powershell", "-NoProfile", "-WindowStyle", "Hidden", "-Command", command],
-            shell=False,
+            [str(batch_file)],
+            cwd=str(temp_dir),
             creationflags=creation_flags,
         )
 
