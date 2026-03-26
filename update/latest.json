@@ -1,5 +1,5 @@
 {
   "version": "1.0.4",
-  "download_url": "https://github.com/DaniBGA/Primal-gestion/releases/download/V1.0.4/PrimalGestionSetup_1.0.4.exe",
+  "download_url": "https://github.com/DaniBGA/Primal-gestion/releases/download/v1.0.4/PrimalGestionSetup_1.0.4.exe",
   "notes": "Test con carga de datos masivos funciono correctamente, alerta de vencimiento de mensualidad cuando estas por agregar un nuevo pago de mensualidad a un alumno"
 }
