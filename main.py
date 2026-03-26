@@ -1,6 +1,8 @@
 import sys
 import os
 import subprocess
+import tempfile
+from datetime import datetime
 from pathlib import Path
 
 from PyQt6.QtCore import QTimer, QUrl
@@ -61,7 +63,9 @@ class MainWindow(QMainWindow):
 
     def _check_updates(self, manual: bool) -> None:
         metadata_url = resolve_metadata_url(UPDATE_METADATA_URL, GITHUB_REPO, GITHUB_BRANCH)
+        self._log_update_event(f"Check updates start | manual={manual} | metadata_url={metadata_url}")
         if not metadata_url:
+            self._log_update_event("No update source configured")
             if manual:
                 QMessageBox.information(
                     self,
@@ -73,11 +77,13 @@ class MainWindow(QMainWindow):
         try:
             update = check_for_update(APP_VERSION, metadata_url)
         except UpdateCheckError as exc:
+            self._log_update_event(f"Update check error: {exc}")
             if manual:
                 QMessageBox.warning(self, "Actualizaciones", str(exc))
             return
 
         if not update:
+            self._log_update_event(f"No update available | current={APP_VERSION}")
             if manual:
                 QMessageBox.information(
                     self,
@@ -85,6 +91,8 @@ class MainWindow(QMainWindow):
                     f"Ya tienes la ultima version instalada ({APP_VERSION}).",
                 )
             return
+
+        self._log_update_event(f"Update available | remote={update.version} | download_url={update.download_url}")
 
         details = f"Hay una nueva version disponible: {update.version}."
         if update.notes:
@@ -96,22 +104,34 @@ class MainWindow(QMainWindow):
             self._run_installer_update(update.download_url, update.version)
 
     def _run_installer_update(self, download_url: str, version: str) -> None:
+        self._log_update_event(f"Download installer start | version={version} | url={download_url}")
         try:
             installer_path = download_update_installer(download_url, APP_NAME, version)
         except UpdateInstallError as exc:
+            self._log_update_event(f"Download installer failed: {exc}")
             QMessageBox.warning(self, "Actualizaciones", str(exc))
             return
+
+        self._log_update_event(f"Installer downloaded to: {installer_path}")
 
         try:
             self._launch_installer_after_exit(str(installer_path))
         except OSError as exc:
+            self._log_update_event(f"Schedule installer launch failed: {exc}")
             self._show_manual_installer_fallback(installer_path, launch_error=str(exc))
             return
+
+        self._log_update_event("Installer launch scheduled; app will quit")
 
         self._show_manual_installer_fallback(installer_path)
         QApplication.quit()
 
     def _show_manual_installer_fallback(self, installer_path: Path, launch_error: str | None = None) -> None:
+        log_path = self._get_update_log_path()
+        self._log_update_event(
+            f"Showing manual fallback dialog | installer={installer_path} | launch_error={launch_error or 'none'}"
+        )
+
         message = QMessageBox(self)
         message.setWindowTitle("Actualizacion")
         message.setIcon(QMessageBox.Icon.Information)
@@ -127,7 +147,7 @@ class MainWindow(QMainWindow):
             )
         message.setText(text)
 
-        details = f"Instalador:\n{installer_path}"
+        details = f"Instalador:\n{installer_path}\n\nLog de actualizacion:\n{log_path}"
         if launch_error:
             details += f"\n\nDetalle del error:\n{launch_error}"
         message.setInformativeText(details)
@@ -138,13 +158,17 @@ class MainWindow(QMainWindow):
         message.exec()
 
         if message.clickedButton() == open_folder_button:
+            self._log_update_event("User clicked: open installer folder")
             QDesktopServices.openUrl(QUrl.fromLocalFile(str(installer_path.parent)))
+        else:
+            self._log_update_event("User clicked: continue")
 
     @staticmethod
     def _launch_installer_after_exit(installer_path: str) -> None:
         # Lanza el instalador desde cmd desacoplado con una espera corta para que la app cierre.
         # Evita depender del nombre del proceso (python.exe vs PrimalGestion.exe).
         command = f'timeout /t 3 /nobreak >NUL & start "" "{installer_path}"'
+        MainWindow._log_update_event(f"Schedule launcher via cmd | command={command}")
 
         creation_flags = 0
         for flag_name in ("CREATE_NO_WINDOW", "CREATE_NEW_PROCESS_GROUP", "DETACHED_PROCESS"):
@@ -155,6 +179,23 @@ class MainWindow(QMainWindow):
             shell=False,
             creationflags=creation_flags,
         )
+
+    @staticmethod
+    def _get_update_log_path() -> Path:
+        updates_dir = Path(tempfile.gettempdir()) / "PrimalGestionUpdates"
+        updates_dir.mkdir(parents=True, exist_ok=True)
+        return updates_dir / "update.log"
+
+    @staticmethod
+    def _log_update_event(message: str) -> None:
+        try:
+            log_path = MainWindow._get_update_log_path()
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            with log_path.open("a", encoding="utf-8") as log_file:
+                log_file.write(f"[{timestamp}] {message}\n")
+        except Exception:
+            # Logging must never break update flow.
+            pass
 
     def check_updates_manual(self) -> None:
         self._check_updates(manual=True)
