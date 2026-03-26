@@ -4,8 +4,8 @@ import shutil
 from datetime import date
 from pathlib import Path
 
-from PyQt6.QtCore import QDate, QUrl, pyqtSignal
-from PyQt6.QtGui import QDesktopServices, QPixmap
+from PyQt6.QtCore import QDate, QUrl, Qt, pyqtSignal
+from PyQt6.QtGui import QCursor, QDesktopServices, QPixmap
 from PyQt6.QtWidgets import (
     QDialog,
     QFileDialog,
@@ -21,6 +21,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
     QDateEdit,
+    QSizePolicy,
 )
 
 try:
@@ -35,7 +36,7 @@ except ImportError:
 
 from db.database import SessionLocal
 from db.models import Socio
-from core.paths import get_medical_files_dir
+from core.paths import get_medical_files_dir, get_resource_path
 
 
 class SociosWidget(QWidget):
@@ -64,7 +65,17 @@ class SociosWidget(QWidget):
         self.table.setHorizontalHeaderLabels(
             ["ID", "Nombre y apellido", "Nacimiento", "Telefono", "Planilla medica"]
         )
-        self.table.horizontalHeader().setStretchLastSection(True)
+        header = self.table.horizontalHeader()
+        header.setStretchLastSection(False)
+        header.setSectionResizeMode(0, header.ResizeMode.Fixed)
+        header.setSectionResizeMode(1, header.ResizeMode.Stretch)
+        header.setSectionResizeMode(2, header.ResizeMode.Fixed)
+        header.setSectionResizeMode(3, header.ResizeMode.Fixed)
+        header.setSectionResizeMode(4, header.ResizeMode.Fixed)
+        self.table.setColumnWidth(0, 60)
+        self.table.setColumnWidth(2, 120)
+        self.table.setColumnWidth(3, 140)
+        self.table.setColumnWidth(4, 170)
         self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
         self.table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
         self.table.itemSelectionChanged.connect(self.on_table_selection)
@@ -114,13 +125,46 @@ class SociosWidget(QWidget):
 
         right_panel.addLayout(btn_layout)
         right_panel.addWidget(QLabel("Completa los datos y guarda para crear o editar un alumno."))
-        right_panel.addStretch()
+
+        self.logo_label = QLabel()
+        self.logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.logo_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        logo_path = get_resource_path("assets", "icons", "PrimalLogo.png")
+        logo_pixmap = QPixmap(str(logo_path)) if logo_path.exists() else QPixmap()
+        if logo_pixmap.isNull():
+            self.logo_label.setText("PRIMAL")
+        else:
+            self.logo_label.setPixmap(
+                logo_pixmap.scaled(420, 420, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+            )
+        right_panel.addWidget(self.logo_label, 1)
+
+        developed_by_label = QLabel("Desarrollado por")
+        developed_by_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        right_panel.addWidget(developed_by_label)
+
+        self.vexus_logo_label = QLabel()
+        self.vexus_logo_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.vexus_logo_label.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        vexus_logo_path = get_resource_path("assets", "icons", "Logo_vexus.png")
+        vexus_pixmap = QPixmap(str(vexus_logo_path)) if vexus_logo_path.exists() else QPixmap()
+        if vexus_pixmap.isNull():
+            self.vexus_logo_label.setText("Vexus")
+        else:
+            self.vexus_logo_label.setPixmap(
+                vexus_pixmap.scaled(150, 46, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+            )
+        self.vexus_logo_label.mousePressEvent = self._open_vexus_site
+        right_panel.addWidget(self.vexus_logo_label)
 
         layout.addLayout(right_panel, 1)
 
+    def _open_vexus_site(self, _event) -> None:
+        QDesktopServices.openUrl(QUrl("https://www.grupovexus.com"))
+
     def load_socios(self) -> None:
         with SessionLocal() as session:
-            socios = session.query(Socio).order_by(Socio.nombre_apellido.asc()).all()
+            socios = session.query(Socio).order_by(Socio.id.asc()).all()
 
         self.table.setRowCount(len(socios))
         for row, socio in enumerate(socios):
@@ -131,7 +175,11 @@ class SociosWidget(QWidget):
             planilla_estado = "Cargada" if socio.planilla_medica_path else "Sin planilla"
             self.table.setItem(row, 4, QTableWidgetItem(planilla_estado))
 
-        self.table.resizeColumnsToContents()
+        # Keep stable widths even when the table has many rows.
+        self.table.setColumnWidth(0, 60)
+        self.table.setColumnWidth(2, 120)
+        self.table.setColumnWidth(3, 140)
+        self.table.setColumnWidth(4, 170)
         self.filter_socios_table(self.search_input.text())
 
     def filter_socios_table(self, query: str) -> None:

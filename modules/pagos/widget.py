@@ -26,7 +26,9 @@ from db.models import Pago, Socio
 class PagosWidget(QWidget):
     def __init__(self) -> None:
         super().__init__()
+        self._suppress_socio_warning = False
         self._build_ui()
+        self.cleanup_old_overdue_payments()
         self.load_socios()
         self.load_payments_table()
 
@@ -35,6 +37,7 @@ class PagosWidget(QWidget):
 
         form = QFormLayout()
         self.socio_combo = QComboBox()
+        self.socio_combo.activated.connect(self._warn_if_selected_socio_overdue)
         self.monto_input = QDoubleSpinBox()
         self.monto_input.setMaximum(1_000_000)
         self.monto_input.setPrefix("$ ")
@@ -63,10 +66,20 @@ class PagosWidget(QWidget):
         action_row.addStretch()
         root.addLayout(action_row)
 
+        search_row = QHBoxLayout()
+        search_row.addWidget(QLabel("Buscar alumno:"))
+        self.search_input = QComboBox()
+        self.search_input.setEditable(True)
+        self.search_input.setInsertPolicy(QComboBox.InsertPolicy.NoInsert)
+        self.search_input.setPlaceholderText("Nombre del alumno")
+        self.search_input.lineEdit().textChanged.connect(self.load_payments_table)
+        search_row.addWidget(self.search_input)
+        root.addLayout(search_row)
+
         filter_row = QHBoxLayout()
         filter_row.addWidget(QLabel("Filtrar por estado:"))
         self.filter_combo = QComboBox()
-        self.filter_combo.addItems(["Todos", "Proximos a vencerse", "Vencidos"])
+        self.filter_combo.addItems(["Todos", "Al dia", "Proximos a vencerse", "Vencidos"])
         self.filter_combo.currentIndexChanged.connect(self.load_payments_table)
         filter_row.addWidget(self.filter_combo)
         filter_row.addStretch()
@@ -91,8 +104,11 @@ class PagosWidget(QWidget):
         root.addWidget(self.table)
 
     def load_socios(self) -> None:
+        self._suppress_socio_warning = True
         current_data = self.socio_combo.currentData()
         self.socio_combo.clear()
+        current_search = self.search_input.currentText().strip()
+        self.search_input.clear()
 
         with SessionLocal() as session:
             socios = (
@@ -104,11 +120,17 @@ class PagosWidget(QWidget):
 
         for socio in socios:
             self.socio_combo.addItem(socio.nombre_apellido, socio.id)
+            self.search_input.addItem(socio.nombre_apellido)
+
+        if current_search:
+            self.search_input.setCurrentText(current_search)
 
         if current_data is not None:
             idx = self.socio_combo.findData(current_data)
             if idx >= 0:
                 self.socio_combo.setCurrentIndex(idx)
+
+        self._suppress_socio_warning = False
 
     def register_payment(self) -> None:
         socio_id = self.socio_combo.currentData()
@@ -138,9 +160,22 @@ class PagosWidget(QWidget):
             session.add(pago)
             session.commit()
 
+        self.cleanup_old_overdue_payments()
         self.load_payments_table()
 
+    def cleanup_old_overdue_payments(self) -> None:
+        cutoff = date.today() - timedelta(days=60)
+        with SessionLocal() as session:
+            (
+                session.query(Pago)
+                .filter(Pago.fecha_proximo_pago < cutoff)
+                .delete(synchronize_session=False)
+            )
+            session.commit()
+
     def load_payments_table(self) -> None:
+        self.cleanup_old_overdue_payments()
+
         with SessionLocal() as session:
             latest_payment_subquery = (
                 session.query(
@@ -168,10 +203,15 @@ class PagosWidget(QWidget):
         today = date.today()
         upcoming_limit = today + timedelta(days=7)
         selected_filter = self.filter_combo.currentText()
+        search_text = self.search_input.currentText().strip().lower()
 
         filtered_rows: list[tuple[Pago, Socio, str]] = []
         for pago, socio in rows:
             status = self._compute_status(pago.fecha_proximo_pago, today, upcoming_limit)
+            if search_text and search_text not in socio.nombre_apellido.lower():
+                continue
+            if selected_filter == "Al dia" and status != "Al dia":
+                continue
             if selected_filter == "Proximos a vencerse" and status != "Proximo a vencer":
                 continue
             if selected_filter == "Vencidos" and status != "Vencido":
@@ -203,3 +243,26 @@ class PagosWidget(QWidget):
         if today <= next_payment <= upcoming_limit:
             return "Proximo a vencer"
         return "Al dia"
+
+    def _warn_if_selected_socio_overdue(self, _index: int | None = None) -> None:
+        if self._suppress_socio_warning:
+            return
+
+        socio_id = self.socio_combo.currentData()
+        if socio_id is None:
+            return
+
+        with SessionLocal() as session:
+            last_payment = (
+                session.query(Pago)
+                .filter(Pago.socio_id == int(socio_id))
+                .order_by(Pago.fecha_proximo_pago.desc(), Pago.fecha_pago.desc(), Pago.id.desc())
+                .first()
+            )
+
+        if not last_payment:
+            return
+
+        today = date.today()
+        if last_payment.fecha_proximo_pago < today:
+            QMessageBox.warning(self, "Alerta", "El alumno adeuda mensualidad")

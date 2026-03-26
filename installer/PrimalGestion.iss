@@ -1,6 +1,6 @@
 ; Inno Setup script para Primal Gestion
 
-#define MyAppVersion "1.0.3"
+#define MyAppVersion "1.0.4"
 
 [Setup]
 AppId={{A5D4F8AF-3CA5-49EE-A2C2-8A1A0F6E2D91}
