@@ -30,11 +30,20 @@ class TrainingWidget(QWidget):
         self.timer.setInterval(1000)
         self.timer.timeout.connect(self._tick)
 
-        self.total_seconds = 0
+        self._start_delay_timer = QTimer(self)
+        self._start_delay_timer.setSingleShot(True)
+        self._start_delay_timer.timeout.connect(self._begin_countdown_after_delay)
+
+        self.exercise_seconds = 0
+        self.rest_seconds = 0
+        self.total_rounds = 1
+        self.current_round = 1
+        self.is_rest_phase = False
         self.remaining_seconds = 0
         self.current_exercise_id: int | None = None
         self.session_start: datetime | None = None
         self._countdown_sound_played = False
+        self._pending_start = False
 
         self._start_audio_output = QAudioOutput(self)
         self._start_player = QMediaPlayer(self)
@@ -70,12 +79,20 @@ class TrainingWidget(QWidget):
         self.exercise_duration_input = QSpinBox()
         self.exercise_duration_input.setRange(5, 7200)
         self.exercise_duration_input.setValue(180)
+        self.rest_duration_input = QSpinBox()
+        self.rest_duration_input.setRange(0, 600)
+        self.rest_duration_input.setValue(30)
+        self.rounds_input = QSpinBox()
+        self.rounds_input.setRange(1, 50)
+        self.rounds_input.setValue(3)
         self.exercise_desc_input = QTextEdit()
         self.exercise_desc_input.setPlaceholderText("Descripcion opcional")
         self.exercise_desc_input.setFixedHeight(70)
 
         create_box.addRow("Nuevo ejercicio:", self.exercise_name_input)
         create_box.addRow("Duracion (segundos):", self.exercise_duration_input)
+        create_box.addRow("Descanso (segundos):", self.rest_duration_input)
+        create_box.addRow("Rondas:", self.rounds_input)
         create_box.addRow("Descripcion:", self.exercise_desc_input)
         root.addLayout(create_box)
 
@@ -83,6 +100,9 @@ class TrainingWidget(QWidget):
         create_btn.clicked.connect(self.create_exercise)
         create_row = QHBoxLayout()
         create_row.addWidget(create_btn)
+        edit_btn = QPushButton("Editar ejercicio")
+        edit_btn.clicked.connect(self.edit_exercise)
+        create_row.addWidget(edit_btn)
         delete_btn = QPushButton("Borrar entrenamiento")
         delete_btn.clicked.connect(self.delete_exercise)
         create_row.addWidget(delete_btn)
@@ -108,6 +128,11 @@ class TrainingWidget(QWidget):
         self.timer_label.setAlignment(Qt.AlignmentFlag.AlignHCenter)
         root.addWidget(self.timer_label)
 
+        self.phase_label = QLabel("Sin ejercicio")
+        self.phase_label.setAlignment(Qt.AlignmentFlag.AlignHCenter)
+        self.phase_label.setStyleSheet("font-size: 14px; font-weight: 600;")
+        root.addWidget(self.phase_label)
+
         controls = QHBoxLayout()
         start_btn = QPushButton("Iniciar")
         pause_btn = QPushButton("Pausar")
@@ -127,6 +152,8 @@ class TrainingWidget(QWidget):
     def create_exercise(self) -> None:
         nombre = self.exercise_name_input.text().strip()
         duracion = int(self.exercise_duration_input.value())
+        descanso = int(self.rest_duration_input.value())
+        rondas = int(self.rounds_input.value())
         descripcion = self.exercise_desc_input.toPlainText().strip() or None
 
         if not nombre:
@@ -139,14 +166,65 @@ class TrainingWidget(QWidget):
                 QMessageBox.warning(self, "Duplicado", "Ya existe un ejercicio con ese nombre.")
                 return
 
-            ejercicio = Ejercicio(nombre=nombre, duracion_segundos=duracion, descripcion=descripcion)
+            ejercicio = Ejercicio(
+                nombre=nombre,
+                duracion_segundos=duracion,
+                descanso_segundos=descanso,
+                rondas=rondas,
+                descripcion=descripcion,
+            )
             session.add(ejercicio)
             session.commit()
 
         self.exercise_name_input.clear()
         self.exercise_desc_input.clear()
         self.exercise_duration_input.setValue(180)
+        self.rest_duration_input.setValue(30)
+        self.rounds_input.setValue(3)
         self.load_exercises()
+
+    def edit_exercise(self) -> None:
+        exercise_id = self.exercise_combo.currentData()
+        if exercise_id is None:
+            QMessageBox.information(self, "Sin seleccion", "Selecciona un entrenamiento para editar.")
+            return
+
+        nombre = self.exercise_name_input.text().strip()
+        duracion = int(self.exercise_duration_input.value())
+        descanso = int(self.rest_duration_input.value())
+        rondas = int(self.rounds_input.value())
+        descripcion = self.exercise_desc_input.toPlainText().strip() or None
+
+        if not nombre:
+            QMessageBox.warning(self, "Dato requerido", "Ingresa el nombre del ejercicio.")
+            return
+
+        with SessionLocal() as session:
+            exercise = session.get(Ejercicio, int(exercise_id))
+            if not exercise:
+                QMessageBox.warning(self, "No encontrado", "El entrenamiento ya no existe.")
+                return
+
+            duplicate = (
+                session.query(Ejercicio)
+                .filter(Ejercicio.nombre == nombre, Ejercicio.id != int(exercise_id))
+                .first()
+            )
+            if duplicate:
+                QMessageBox.warning(self, "Duplicado", "Ya existe otro ejercicio con ese nombre.")
+                return
+
+            exercise.nombre = nombre
+            exercise.duracion_segundos = duracion
+            exercise.descanso_segundos = descanso
+            exercise.rondas = rondas
+            exercise.descripcion = descripcion
+            session.commit()
+
+        self.load_exercises()
+        idx = self.exercise_combo.findData(int(exercise_id))
+        if idx >= 0:
+            self.exercise_combo.setCurrentIndex(idx)
 
     def load_exercises(self) -> None:
         current_id = self.exercise_combo.currentData()
@@ -156,7 +234,11 @@ class TrainingWidget(QWidget):
             exercises = session.query(Ejercicio).order_by(Ejercicio.nombre.asc()).all()
 
         for exercise in exercises:
-            label = f"{exercise.nombre} ({exercise.duracion_segundos}s)"
+            label = (
+                f"{exercise.nombre} "
+                f"(Trabajo {exercise.duracion_segundos}s | Descanso {exercise.descanso_segundos}s | "
+                f"Rondas {exercise.rondas})"
+            )
             self.exercise_combo.addItem(label, exercise.id)
 
         if current_id is not None:
@@ -168,18 +250,28 @@ class TrainingWidget(QWidget):
         if self.exercise_combo.count() > 0:
             self.exercise_combo.setCurrentIndex(0)
         else:
-            self.total_seconds = 0
+            self.exercise_seconds = 0
+            self.rest_seconds = 0
+            self.total_rounds = 1
+            self.current_round = 1
+            self.is_rest_phase = False
             self.remaining_seconds = 0
             self._update_timer_label()
+            self._update_phase_label()
 
     def on_exercise_selected(self) -> None:
         exercise_id = self.exercise_combo.currentData()
         if exercise_id is None:
             self.current_exercise_id = None
-            self.total_seconds = 0
+            self.exercise_seconds = 0
+            self.rest_seconds = 0
+            self.total_rounds = 1
+            self.current_round = 1
+            self.is_rest_phase = False
             self.remaining_seconds = 0
             self.selected_desc.clear()
             self._update_timer_label()
+            self._update_phase_label()
             return
 
         with SessionLocal() as session:
@@ -189,13 +281,23 @@ class TrainingWidget(QWidget):
             return
 
         self.current_exercise_id = exercise.id
-        self.total_seconds = int(exercise.duracion_segundos)
-        self.remaining_seconds = self.total_seconds
+        self.exercise_seconds = int(exercise.duracion_segundos)
+        self.rest_seconds = int(exercise.descanso_segundos)
+        self.total_rounds = max(1, int(exercise.rondas))
+        self.current_round = 1
+        self.is_rest_phase = False
+        self.remaining_seconds = self.exercise_seconds
         self.session_start = None
         self._countdown_sound_played = False
         self.timer.stop()
         self.selected_desc.setPlainText(exercise.descripcion or "Sin descripcion")
+        self.exercise_name_input.setText(exercise.nombre)
+        self.exercise_duration_input.setValue(self.exercise_seconds)
+        self.rest_duration_input.setValue(self.rest_seconds)
+        self.rounds_input.setValue(self.total_rounds)
+        self.exercise_desc_input.setPlainText(exercise.descripcion or "")
         self._update_timer_label()
+        self._update_phase_label()
 
     def delete_exercise(self) -> None:
         exercise_id = self.exercise_combo.currentData()
@@ -222,10 +324,15 @@ class TrainingWidget(QWidget):
         self.timer.stop()
         self.session_start = None
         self.current_exercise_id = None
-        self.total_seconds = 0
+        self.exercise_seconds = 0
+        self.rest_seconds = 0
+        self.total_rounds = 1
+        self.current_round = 1
+        self.is_rest_phase = False
         self.remaining_seconds = 0
         self.selected_desc.clear()
         self._countdown_sound_played = False
+        self._update_phase_label()
         self.load_exercises()
 
     def start_timer(self) -> None:
@@ -234,26 +341,80 @@ class TrainingWidget(QWidget):
             return
 
         if self.remaining_seconds <= 0:
-            self.remaining_seconds = self.total_seconds
+            self.remaining_seconds = self.rest_seconds if self.is_rest_phase else self.exercise_seconds
 
         if self.session_start is None:
             self.session_start = datetime.now()
             self._countdown_sound_played = False
-            if self._start_player.source().isValid():
-                self._start_player.stop()
-                self._start_player.play()
+            self._start_countdown_with_horn_delay()
+            return
 
-        self.timer.start()
+        if not self.timer.isActive() and not self._pending_start:
+            self.timer.start()
 
     def pause_timer(self) -> None:
+        self._start_delay_timer.stop()
+        self._pending_start = False
         self.timer.stop()
 
     def reset_timer(self) -> None:
+        self._start_delay_timer.stop()
+        self._pending_start = False
         self.timer.stop()
-        self.remaining_seconds = self.total_seconds
+        self.current_round = 1
+        self.is_rest_phase = False
+        self.remaining_seconds = self.exercise_seconds
         self.session_start = None
         self._countdown_sound_played = False
         self._update_timer_label()
+        self._update_phase_label()
+
+    def _play_start_sound(self) -> None:
+        if self._start_player.source().isValid():
+            self._start_player.stop()
+            self._start_player.play()
+
+    def _start_countdown_with_horn_delay(self) -> None:
+        self.timer.stop()
+        self._play_start_sound()
+        self._pending_start = True
+        self._start_delay_timer.start(500)
+
+    def _begin_countdown_after_delay(self) -> None:
+        self._pending_start = False
+        self.timer.start()
+
+    def _play_countdown_sound(self) -> None:
+        if self._countdown_player.source().isValid():
+            self._countdown_player.stop()
+            self._countdown_player.play()
+
+    def _start_rest_phase(self) -> None:
+        self.is_rest_phase = True
+        self.remaining_seconds = self.rest_seconds
+        self._countdown_sound_played = False
+        self._update_timer_label()
+        self._update_phase_label()
+
+    def _start_next_round(self) -> None:
+        self.current_round += 1
+        self.is_rest_phase = False
+        self.remaining_seconds = self.exercise_seconds
+        self._countdown_sound_played = False
+        self._update_timer_label()
+        self._update_phase_label()
+        self._start_countdown_with_horn_delay()
+
+    def _finish_training(self) -> None:
+        self.timer.stop()
+        self._save_training_session()
+        self._countdown_sound_played = False
+        self.is_rest_phase = False
+        self.current_round = 1
+        self.remaining_seconds = self.exercise_seconds
+        self._update_timer_label()
+        self._update_phase_label()
+        QMessageBox.information(self, "Completado", "Entrenamiento finalizado.")
 
     def _tick(self) -> None:
         if self.remaining_seconds <= 0:
@@ -265,15 +426,21 @@ class TrainingWidget(QWidget):
 
         if self.remaining_seconds == 4 and not self._countdown_sound_played:
             self._countdown_sound_played = True
-            if self._countdown_player.source().isValid():
-                self._countdown_player.stop()
-                self._countdown_player.play()
+            self._play_countdown_sound()
 
         if self.remaining_seconds == 0:
-            self.timer.stop()
-            self._save_training_session()
-            self._countdown_sound_played = False
-            QMessageBox.information(self, "Completado", "Ejercicio finalizado.")
+            if self.is_rest_phase:
+                self._start_next_round()
+                return
+
+            if self.current_round >= self.total_rounds:
+                self._finish_training()
+                return
+
+            if self.rest_seconds > 0:
+                self._start_rest_phase()
+            else:
+                self._start_next_round()
 
     def _save_training_session(self) -> None:
         if self.current_exercise_id is None or self.session_start is None:
@@ -298,3 +465,11 @@ class TrainingWidget(QWidget):
         minutes = self.remaining_seconds // 60
         seconds = self.remaining_seconds % 60
         self.timer_label.setText(f"{minutes:02d}:{seconds:02d}")
+
+    def _update_phase_label(self) -> None:
+        if self.current_exercise_id is None:
+            self.phase_label.setText("Sin ejercicio")
+            return
+
+        phase = "Descanso" if self.is_rest_phase else "Ejercicio"
+        self.phase_label.setText(f"{phase} - Ronda {self.current_round}/{self.total_rounds}")

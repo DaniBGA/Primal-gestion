@@ -43,6 +43,8 @@ class Ejercicio(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     nombre: Mapped[str] = mapped_column(String(120), nullable=False, unique=True)
     duracion_segundos: Mapped[int] = mapped_column(Integer, nullable=False)
+    descanso_segundos: Mapped[int] = mapped_column(Integer, nullable=False, default=30)
+    rondas: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
     descripcion: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
     sesiones: Mapped[list["SesionEntrenamiento"]] = relationship(
