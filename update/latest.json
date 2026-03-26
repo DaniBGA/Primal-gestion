@@ -1,5 +1,5 @@
 {
   "version": "1.0.7",
-  "download_url": "https://github.com/DaniBGA/Primal-gestion/releases/download/1.0.7/PrimalGestionSetup_1.0.7.exe",
+  "download_url": "https://github.com/DaniBGA/Primal-gestion/releases/download/v1.0.7/PrimalGestionSetup_1.0.7.exe",
   "notes": "Retry automatico de URL de descarga para evitar 404 por formato de tag"
 }
