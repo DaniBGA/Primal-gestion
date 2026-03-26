@@ -1,4 +1,5 @@
 import sys
+import os
 import subprocess
 
 from PyQt6.QtCore import QTimer, QUrl
@@ -101,7 +102,7 @@ class MainWindow(QMainWindow):
             return
 
         try:
-            subprocess.Popen([str(installer_path)], shell=False)
+            self._launch_installer_after_exit(str(installer_path))
         except OSError as exc:
             QMessageBox.warning(self, "Actualizaciones", f"No se pudo abrir el instalador: {exc}")
             return
@@ -112,6 +113,25 @@ class MainWindow(QMainWindow):
             "Se abrira el instalador para actualizar Primal Gestion. La aplicacion se cerrara.",
         )
         QApplication.quit()
+
+    @staticmethod
+    def _launch_installer_after_exit(installer_path: str) -> None:
+        current_pid = os.getpid()
+        escaped_installer = installer_path.replace("'", "''")
+        command = (
+            f"Wait-Process -Id {current_pid}; "
+            f"Start-Process -FilePath '{escaped_installer}'"
+        )
+
+        creation_flags = 0
+        for flag_name in ("CREATE_NO_WINDOW", "CREATE_NEW_PROCESS_GROUP", "DETACHED_PROCESS"):
+            creation_flags |= getattr(subprocess, flag_name, 0)
+
+        subprocess.Popen(
+            ["powershell", "-NoProfile", "-WindowStyle", "Hidden", "-Command", command],
+            shell=False,
+            creationflags=creation_flags,
+        )
 
     def check_updates_manual(self) -> None:
         self._check_updates(manual=True)
