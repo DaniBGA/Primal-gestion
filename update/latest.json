@@ -1,5 +1,5 @@
 {
   "version": "1.0.9",
-  "download_url": "https://github.com/DaniBGA/Primal-gestion/releases/download/1.0.9/PrimalGestionSetup_1.0.9.exe",
+  "download_url": "https://github.com/DaniBGA/Primal-gestion/releases/download/v1.0.9/PrimalGestionSetup_1.0.9.exe",
   "notes": "Build usa venv correcto y corrige inclusion de reportlab en PyInstaller"
 }
