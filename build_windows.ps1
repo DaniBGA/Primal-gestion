@@ -12,7 +12,7 @@ if (Test-Path .\build) { Remove-Item .\build -Recurse -Force }
 if (Test-Path .\dist) { Remove-Item .\dist -Recurse -Force }
 
 Write-Host 'Compilando Primal.exe con PyInstaller...'
-& $pythonExe -m PyInstaller --noconfirm --clean --windowed --onefile --name Primal --icon .\assets\icons\PrimalLogo.ico --version-file .\version.txt --add-data "assets;assets" .\main.py
+& $pythonExe -m PyInstaller --noconfirm --clean --windowed --onefile --name Primal --icon .\assets\icons\PrimalLogo.ico --version-file .\version.txt --add-data "assets;assets" --hidden-import=reportlab --hidden-import=reportlab.lib --hidden-import=reportlab.pdfgen .\main.py
 
 if ($LASTEXITCODE -ne 0) {
 	throw 'PyInstaller fallo. Revisa el log anterior.'
