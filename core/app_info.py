@@ -1,5 +1,5 @@
 APP_NAME = "Primal Gestion"
-APP_VERSION = "1.0.8"
+APP_VERSION = "1.0.9"
 
 # URL publica con JSON de version disponible.
 # Ejemplo de contenido:

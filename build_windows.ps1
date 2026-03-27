@@ -2,7 +2,24 @@ $ErrorActionPreference = 'Stop'
 
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $root
-$pythonExe = (Get-Command python -ErrorAction Stop).Source
+
+$venvCandidates = @(
+	(Join-Path $root ".venv\Scripts\python.exe"),
+	(Join-Path (Split-Path -Parent $root) ".venv\Scripts\python.exe")
+)
+$venvPython = $venvCandidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+if ($venvPython) {
+	$pythonExe = $venvPython
+} else {
+	$pythonExe = (Get-Command python -ErrorAction Stop).Source
+}
+
+Write-Host "Usando Python: $pythonExe"
+
+& $pythonExe -c "import reportlab"
+if ($LASTEXITCODE -ne 0) {
+	throw "Falta reportlab en el Python usado para build. Instala dependencias con: & '$pythonExe' -m pip install -r .\\requirements.txt"
+}
 
 Write-Host 'Generando icono .ico...'
 & $pythonExe .\tools\make_icon.py
