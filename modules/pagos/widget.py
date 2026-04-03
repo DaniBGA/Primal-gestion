@@ -69,6 +69,10 @@ class PagosWidget(QWidget):
         load_btn.clicked.connect(self.load_selected_payment_for_edit)
         action_row.addWidget(load_btn)
 
+        delete_btn = QPushButton("Borrar pago seleccionado")
+        delete_btn.clicked.connect(self.delete_selected_payment)
+        action_row.addWidget(delete_btn)
+
         cancel_btn = QPushButton("Cancelar edicion")
         cancel_btn.clicked.connect(self.cancel_edit_mode)
         action_row.addWidget(cancel_btn)
@@ -306,6 +310,43 @@ class PagosWidget(QWidget):
     def cancel_edit_mode(self) -> None:
         self.editing_payment_id = None
         self.save_btn.setText("Registrar pago")
+
+    def delete_selected_payment(self) -> None:
+        row = self.table.currentRow()
+        if row < 0:
+            QMessageBox.information(self, "Sin seleccion", "Selecciona un pago de la tabla para borrar.")
+            return
+
+        first_item = self.table.item(row, 0)
+        if first_item is None:
+            return
+
+        payment_id = first_item.data(Qt.ItemDataRole.UserRole)
+        if payment_id is None:
+            QMessageBox.warning(self, "Dato invalido", "No se pudo identificar el pago seleccionado.")
+            return
+
+        confirm = QMessageBox.question(
+            self,
+            "Confirmar",
+            "Se borrara el pago seleccionado. Continuar?",
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+
+        with SessionLocal() as session:
+            pago = session.get(Pago, int(payment_id))
+            if not pago:
+                QMessageBox.warning(self, "No encontrado", "El pago seleccionado ya no existe.")
+                self.load_payments_table()
+                return
+            session.delete(pago)
+            session.commit()
+
+        if self.editing_payment_id == int(payment_id):
+            self.cancel_edit_mode()
+
+        self.load_payments_table()
 
     @staticmethod
     def _compute_status(next_payment: date, today: date, upcoming_limit: date) -> str:

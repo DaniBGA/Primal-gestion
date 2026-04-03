@@ -2156,11 +2156,11 @@
   ('reportlab',
    'D:\\Vexus\\Gym Primal\\.venv\\Lib\\site-packages\\reportlab\\__init__.py',
    'PYMODULE'),
-  ('tracemalloc',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tracemalloc.py',
-   'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\tracemalloc.py',
    'PYMODULE'),
   ('stringprep',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\stringprep.py',
@@ -3016,24 +3016,24 @@
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\multimedia\\ffmpegmediaplugin.dll',
    'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\tls\\qcertonlybackend.dll',
+  ('PyQt6\\Qt6\\plugins\\tls\\qopensslbackend.dll',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\tls\\qcertonlybackend.dll',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\tls\\qopensslbackend.dll',
    'BINARY'),
   ('libcrypto-3-x64.dll',
    'C:\\Program Files\\PostgreSQL\\18\\bin\\libcrypto-3-x64.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\tls\\qschannelbackend.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\tls\\qschannelbackend.dll',
    'BINARY'),
   ('PyQt6\\Qt6\\plugins\\networkinformation\\qnetworklistmanager.dll',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\networkinformation\\qnetworklistmanager.dll',
    'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\tls\\qopensslbackend.dll',
+  ('PyQt6\\Qt6\\plugins\\tls\\qcertonlybackend.dll',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\tls\\qopensslbackend.dll',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\tls\\qcertonlybackend.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\plugins\\tls\\qschannelbackend.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\tls\\qschannelbackend.dll',
    'BINARY'),
   ('libssl-3-x64.dll',
    'C:\\Program Files\\PostgreSQL\\18\\bin\\libssl-3-x64.dll',
@@ -3050,61 +3050,61 @@
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qwebp.dll',
    'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\imageformats\\qtga.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qtga.dll',
-   'BINARY'),
   ('PyQt6\\Qt6\\plugins\\iconengines\\qsvgicon.dll',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\iconengines\\qsvgicon.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\imageformats\\qpdf.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qpdf.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\imageformats\\qgif.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qgif.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\platforms\\qoffscreen.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\platforms\\qoffscreen.dll',
    'BINARY'),
   ('PyQt6\\Qt6\\plugins\\platforms\\qwindows.dll',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\platforms\\qwindows.dll',
    'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\imageformats\\qsvg.dll',
+  ('PyQt6\\Qt6\\plugins\\imageformats\\qicns.dll',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qsvg.dll',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qicns.dll',
    'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\platforms\\qminimal.dll',
+  ('PyQt6\\Qt6\\plugins\\platforms\\qoffscreen.dll',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\platforms\\qminimal.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\imageformats\\qjpeg.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qjpeg.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\imageformats\\qico.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qico.dll',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\platforms\\qoffscreen.dll',
    'BINARY'),
   ('PyQt6\\Qt6\\plugins\\imageformats\\qtiff.dll',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qtiff.dll',
    'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\imageformats\\qicns.dll',
+  ('PyQt6\\Qt6\\plugins\\imageformats\\qgif.dll',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qicns.dll',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qgif.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\plugins\\generic\\qtuiotouchplugin.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\generic\\qtuiotouchplugin.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\plugins\\imageformats\\qtga.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qtga.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\plugins\\imageformats\\qsvg.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qsvg.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\plugins\\imageformats\\qjpeg.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qjpeg.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\plugins\\imageformats\\qpdf.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qpdf.dll',
    'BINARY'),
   ('PyQt6\\Qt6\\plugins\\imageformats\\qwbmp.dll',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qwbmp.dll',
    'BINARY'),
-  ('PyQt6\\Qt6\\plugins\\generic\\qtuiotouchplugin.dll',
+  ('PyQt6\\Qt6\\plugins\\platforms\\qminimal.dll',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\generic\\qtuiotouchplugin.dll',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\platforms\\qminimal.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\plugins\\imageformats\\qico.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\plugins\\imageformats\\qico.dll',
    'BINARY'),
   ('_lzma.pyd',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_lzma.pyd',
@@ -3245,6 +3245,49 @@
   ('PyQt6\\QtCore.pyd',
    'D:\\Vexus\\Gym Primal\\.venv\\Lib\\site-packages\\PyQt6\\QtCore.pyd',
    'EXTENSION'),
+  ('api-ms-win-crt-locale-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-locale-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-conio-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-conio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-stdio-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-stdio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-process-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-process-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-environment-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-environment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-runtime-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-runtime-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-filesystem-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-filesystem-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-heap-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-convert-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-convert-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-math-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-math-l1-1-0.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\VCRUNTIME140.dll',
+   'BINARY'),
   ('api-ms-win-crt-string-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-string-l1-1-0.dll',
@@ -3252,57 +3295,6 @@
   ('api-ms-win-crt-time-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-time-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-runtime-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-runtime-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-process-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-process-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-conio-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-conio-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-math-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-math-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-convert-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-convert-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-stdio-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-stdio-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-heap-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-heap-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-environment-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-environment-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-locale-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-locale-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-crt-filesystem-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-crt-filesystem-l1-1-0.dll',
-   'BINARY'),
-  ('VCRUNTIME140.dll',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\VCRUNTIME140.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\bin\\MSVCP140.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\MSVCP140.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\bin\\Qt6Multimedia.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\Qt6Multimedia.dll',
    'BINARY'),
   ('VCRUNTIME140_1.dll',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\VCRUNTIME140_1.dll',
@@ -3315,29 +3307,41 @@
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\Qt6Gui.dll',
    'BINARY'),
+  ('PyQt6\\Qt6\\bin\\Qt6Multimedia.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\Qt6Multimedia.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\bin\\MSVCP140.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\MSVCP140.dll',
+   'BINARY'),
+  ('api-ms-win-core-profile-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-profile-l1-1-0.dll',
+   'BINARY'),
   ('PyQt6\\Qt6\\bin\\avcodec-61.dll',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\avcodec-61.dll',
    'BINARY'),
-  ('api-ms-win-core-processthreads-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-processthreads-l1-1-0.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\bin\\swresample-5.dll',
+  ('PyQt6\\Qt6\\bin\\swscale-8.dll',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\swresample-5.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\bin\\avformat-61.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\avformat-61.dll',
-   'BINARY'),
-  ('api-ms-win-core-synch-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-synch-l1-1-0.dll',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\swscale-8.dll',
    'BINARY'),
   ('api-ms-win-core-rtlsupport-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-interlocked-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-interlocked-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-heap-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-heap-l1-1-0.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\bin\\avformat-61.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\avformat-61.dll',
    'BINARY'),
   ('api-ms-win-core-localization-l1-2-0.dll',
    'C:\\Program Files\\Eclipse '
@@ -3347,25 +3351,9 @@
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\avutil-59.dll',
    'BINARY'),
-  ('api-ms-win-core-processthreads-l1-1-1.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-processthreads-l1-1-1.dll',
-   'BINARY'),
-  ('api-ms-win-core-heap-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-heap-l1-1-0.dll',
-   'BINARY'),
-  ('PyQt6\\Qt6\\bin\\swscale-8.dll',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\swscale-8.dll',
-   'BINARY'),
   ('api-ms-win-core-sysinfo-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-sysinfo-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-interlocked-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-interlocked-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-core-errorhandling-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
@@ -3375,13 +3363,25 @@
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-debug-l1-1-0.dll',
    'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-1.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'BINARY'),
   ('api-ms-win-core-synch-l1-2-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-synch-l1-2-0.dll',
    'BINARY'),
-  ('api-ms-win-core-profile-l1-1-0.dll',
+  ('api-ms-win-core-synch-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-profile-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-synch-l1-1-0.dll',
+   'BINARY'),
+  ('PyQt6\\Qt6\\bin\\swresample-5.dll',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\swresample-5.dll',
    'BINARY'),
   ('PyQt6\\Qt6\\bin\\Qt6Network.dll',
    'D:\\Vexus\\Gym '
@@ -3442,53 +3442,57 @@
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\bin\\MSVCP140_1.dll',
    'BINARY'),
-  ('api-ms-win-core-file-l2-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-file-l2-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-namedpipe-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-namedpipe-l1-1-0.dll',
-   'BINARY'),
   ('api-ms-win-core-libraryloader-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-libraryloader-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-timezone-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-timezone-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-datetime-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-datetime-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-memory-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-memory-l1-1-0.dll',
-   'BINARY'),
-  ('api-ms-win-core-sysinfo-l1-2-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-sysinfo-l1-2-0.dll',
    'BINARY'),
   ('api-ms-win-core-file-l1-2-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-file-l1-2-0.dll',
    'BINARY'),
-  ('api-ms-win-core-handle-l1-1-0.dll',
+  ('api-ms-win-core-processenvironment-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-handle-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-processenvironment-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-fibers-l1-1-0.dll',
+  ('api-ms-win-core-file-l2-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-fibers-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-file-l2-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-kernel32-legacy-l1-1-1.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-kernel32-legacy-l1-1-1.dll',
+   'BINARY'),
+  ('api-ms-win-core-timezone-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-timezone-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-string-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-sysinfo-l1-2-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-sysinfo-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-datetime-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-datetime-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-core-util-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-util-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-processenvironment-l1-1-0.dll',
+  ('api-ms-win-core-console-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-console-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-handle-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-handle-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-memory-l1-1-0.dll',
+   'C:\\Program Files\\Eclipse '
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-memory-l1-1-0.dll',
    'BINARY'),
   ('api-ms-win-core-file-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
@@ -3498,17 +3502,13 @@
    'C:\\Program Files\\Eclipse '
    'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-fibers-l1-1-1.dll',
    'BINARY'),
-  ('api-ms-win-core-console-l1-1-0.dll',
+  ('api-ms-win-core-namedpipe-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-console-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-namedpipe-l1-1-0.dll',
    'BINARY'),
-  ('api-ms-win-core-kernel32-legacy-l1-1-1.dll',
+  ('api-ms-win-core-fibers-l1-1-0.dll',
    'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-kernel32-legacy-l1-1-1.dll',
-   'BINARY'),
-  ('api-ms-win-core-string-l1-1-0.dll',
-   'C:\\Program Files\\Eclipse '
-   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-string-l1-1-0.dll',
+   'Adoptium\\jdk-21.0.9.10-hotspot\\bin\\api-ms-win-core-fibers-l1-1-0.dll',
    'BINARY')],
  [],
  [],
@@ -3548,514 +3548,386 @@
    'D:\\Vexus\\Gym Primal\\gym_manager\\assets\\sounds\\Classic Alarm Clock - '
    'Sound Effect ProSounds - ProSounds (mp3cut.net).mp3',
    'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\WHEEL',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\WHEEL',
+   'DATA'),
   ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\METADATA',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\METADATA',
-   'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\RECORD',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\RECORD',
-   'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\top_level.txt',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\top_level.txt',
    'DATA'),
   ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\licenses\\LICENSE',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\licenses\\LICENSE',
    'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\REQUESTED',
+  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\top_level.txt',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\REQUESTED',
+   'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\top_level.txt',
    'DATA'),
   ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\INSTALLER',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\INSTALLER',
    'DATA'),
-  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\WHEEL',
+  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\RECORD',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\WHEEL',
+   'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\RECORD',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\REQUESTED',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.7.1.dist-info\\REQUESTED',
    'DATA'),
   ('setuptools\\_vendor\\jaraco\\text\\Lorem ipsum.txt',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\Lorem '
    'ipsum.txt',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_uk.qm',
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_hu.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_uk.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_nn.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_nn.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_ka.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ka.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_ca.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ca.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_ar.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ar.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_hu.qm',
    'DATA'),
   ('PyQt6\\Qt6\\translations\\qtmultimedia_zh_CN.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_zh_CN.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_zh_TW.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_zh_TW.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_en.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_en.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_cs.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_cs.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_pl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_pl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_sv.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_sv.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_nl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_nl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_de.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_de.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_ru.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ru.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_fa.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_fa.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_fi.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_fi.qm',
-   'DATA'),
   ('PyQt6\\Qt6\\translations\\qtmultimedia_it.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_it.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_tr.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_tr.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_bg.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_bg.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_ja.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ja.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_ko.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ko.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_es.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_es.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_da.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_da.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_hr.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_hr.qm',
    'DATA'),
   ('PyQt6\\Qt6\\translations\\qtmultimedia_pt_BR.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_pt_BR.qm',
    'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_tr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_tr.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_da.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_da.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_uk.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_uk.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_de.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_de.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_fa.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_fa.qm',
+   'DATA'),
   ('PyQt6\\Qt6\\translations\\qtmultimedia_fr.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_fr.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtmultimedia_hu.qm',
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_ca.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_hu.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ca.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_zh_TW.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_zh_TW.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_ar.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ar.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_ru.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ru.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_sv.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_sv.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_cs.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_cs.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_en.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_en.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_hr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_hr.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_ko.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ko.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_nn.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_nn.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_fi.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_fi.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_nl.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_nl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_es.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_es.qm',
    'DATA'),
   ('PyQt6\\Qt6\\translations\\qtmultimedia_sk.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_sk.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_en.qm',
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_pl.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_en.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_pl.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_fa.qm',
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_ja.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_fa.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ja.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_uk.qm',
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_ka.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_uk.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_ka.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_ar.qm',
+  ('PyQt6\\Qt6\\translations\\qtmultimedia_bg.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ar.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_pt_BR.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_pt_BR.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_zh_CN.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_zh_CN.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_it.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_it.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_lg.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_lg.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_cs.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_cs.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_cs.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_cs.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_ko.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ko.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_fr.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_fr.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_gl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_gl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_ja.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ja.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_pl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_pl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_nl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_nl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_ar.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ar.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_nl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_nl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_nn.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_nn.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_pl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_pl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_sl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_sl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_sv.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_sv.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_tr.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_tr.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_tr.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_tr.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_sv.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_sv.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_da.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_da.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_zh_TW.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_zh_TW.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_ka.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ka.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_ca.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ca.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_hr.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_hr.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_sk.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_sk.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_ru.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ru.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_es.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_es.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_fi.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_fi.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_en.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_en.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_lv.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_lv.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_ca.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ca.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_nn.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_nn.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_ru.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ru.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_uk.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_uk.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_zh_TW.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_zh_TW.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_hu.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_hu.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_ka.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ka.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_hr.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_hr.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_sk.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_sk.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_pt_PT.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_pt_PT.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_hu.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_hu.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_pl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_pl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_sv.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_sv.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_es.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_es.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_ru.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ru.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_nn.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_nn.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_pt_BR.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_pt_BR.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_zh_CN.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_zh_CN.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_uk.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_uk.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_fi.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_fi.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_ja.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ja.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_gl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_gl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_zh_CN.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_zh_CN.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_de.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_de.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_hu.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_hu.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_en.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_en.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_lg.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_lg.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_hr.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_hr.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_de.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_de.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_da.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_da.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_he.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_he.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_he.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_he.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_es.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_es.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_da.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_da.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_ko.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ko.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_ko.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ko.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_nl.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_nl.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_it.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_it.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_gd.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_gd.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_it.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_it.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtmultimedia_bg.qm',
    'DATA'),
   ('PyQt6\\Qt6\\translations\\qt_de.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_de.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_ca.qm',
+  ('PyQt6\\Qt6\\translations\\qt_help_uk.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ca.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_uk.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_bg.qm',
+  ('PyQt6\\Qt6\\translations\\qt_hr.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_bg.qm',
-   'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_cs.qm',
-   'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_cs.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_hr.qm',
    'DATA'),
   ('PyQt6\\Qt6\\translations\\qt_bg.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_bg.qm',
    'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_en.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_en.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_sk.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_sk.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_tr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_tr.qm',
+   'DATA'),
   ('PyQt6\\Qt6\\translations\\qt_lv.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_lv.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_ar.qm',
+  ('PyQt6\\Qt6\\translations\\qtbase_he.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ar.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_he.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_sk.qm',
+  ('PyQt6\\Qt6\\translations\\qt_zh_TW.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_sk.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_zh_TW.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_ja.qm',
+  ('PyQt6\\Qt6\\translations\\qt_help_bg.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ja.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_bg.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_tr.qm',
+  ('PyQt6\\Qt6\\translations\\qt_gl.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_tr.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_gl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_hu.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_hu.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_fi.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_fi.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_pl.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_pl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_ca.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ca.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_gd.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_gd.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_nl.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_nl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_ca.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ca.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_hr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_hr.qm',
    'DATA'),
   ('PyQt6\\Qt6\\translations\\qt_lt.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_lt.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_pt_BR.qm',
+  ('PyQt6\\Qt6\\translations\\qtbase_cs.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_pt_BR.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_cs.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_sk.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_sk.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_lg.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_lg.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_gl.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_gl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_de.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_de.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_pt_BR.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_pt_BR.qm',
    'DATA'),
   ('PyQt6\\Qt6\\translations\\qt_help_sl.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_sl.qm',
    'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_ar.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ar.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_da.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_da.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_ka.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ka.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_nn.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_nn.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_cs.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_cs.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_it.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_it.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_zh_CN.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_zh_CN.qm',
+   'DATA'),
   ('PyQt6\\Qt6\\translations\\qt_fa.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_fa.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_zh_TW.qm',
+  ('PyQt6\\Qt6\\translations\\qtbase_ja.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_zh_TW.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ja.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_pl.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_pl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_es.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_es.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_ka.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ka.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_he.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_he.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_pt_BR.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_pt_BR.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_it.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_it.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_pt_PT.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_pt_PT.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_lv.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_lv.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_ca.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ca.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_fr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_fr.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_uk.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_uk.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_lg.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_lg.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_fr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_fr.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_sv.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_sv.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_de.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_de.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_ja.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ja.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_en.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_en.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_hu.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_hu.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_sv.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_sv.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_pl.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_pl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_ko.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ko.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_ar.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ar.qm',
    'DATA'),
   ('PyQt6\\Qt6\\translations\\qt_fr.qm',
    'D:\\Vexus\\Gym '
@@ -4065,80 +3937,199 @@
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_gd.qm',
    'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_da.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_da.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_ka.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ka.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_uk.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_uk.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_ko.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ko.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_ru.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ru.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_en.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_en.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_fa.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_fa.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_zh_TW.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_zh_TW.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_nl.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_nl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_tr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_tr.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_tr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_tr.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_fi.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_fi.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_zh_TW.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_zh_TW.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_ko.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_ko.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_ja.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ja.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_hu.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_hu.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_pt_BR.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_pt_BR.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_ar.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ar.qm',
+   'DATA'),
   ('PyQt6\\Qt6\\translations\\qtbase_bg.qm',
    'D:\\Vexus\\Gym '
    'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_bg.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qt_help_fr.qm',
+  ('PyQt6\\Qt6\\translations\\qt_help_nl.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_fr.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_nl.qm',
    'DATA'),
-  ('PyQt6\\Qt6\\translations\\qtbase_ka.qm',
+  ('PyQt6\\Qt6\\translations\\qt_es.qm',
    'D:\\Vexus\\Gym '
-   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ka.qm',
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_es.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_zh_CN.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_zh_CN.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_ru.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_ru.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_ru.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_ru.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_hr.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_hr.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_nn.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_nn.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_sk.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_sk.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_cs.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_cs.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_sv.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_sv.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_it.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_it.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qtbase_es.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qtbase_es.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_sl.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_sl.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_nn.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_nn.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_zh_CN.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_zh_CN.qm',
+   'DATA'),
+  ('PyQt6\\Qt6\\translations\\qt_help_da.qm',
+   'D:\\Vexus\\Gym '
+   'Primal\\.venv\\Lib\\site-packages\\PyQt6\\Qt6\\translations\\qt_help_da.qm',
    'DATA'),
   ('base_library.zip',
    'D:\\Vexus\\Gym Primal\\gym_manager\\build\\Primal\\base_library.zip',
    'DATA')],
- [('enum',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\enum.py',
-   'PYMODULE'),
-  ('types',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\types.py',
-   'PYMODULE'),
-  ('weakref',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\weakref.py',
-   'PYMODULE'),
-  ('sre_compile',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\sre_compile.py',
+ [('abc',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\abc.py',
    'PYMODULE'),
   ('warnings',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\warnings.py',
    'PYMODULE'),
-  ('genericpath',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\genericpath.py',
-   'PYMODULE'),
-  ('traceback',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\traceback.py',
-   'PYMODULE'),
-  ('sre_constants',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\sre_constants.py',
-   'PYMODULE'),
-  ('collections',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\collections\\__init__.py',
-   'PYMODULE'),
-  ('operator',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\operator.py',
-   'PYMODULE'),
-  ('posixpath',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\posixpath.py',
+  ('functools',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\functools.py',
    'PYMODULE'),
   ('stat',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\stat.py',
    'PYMODULE'),
+  ('sre_compile',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\sre_compile.py',
+   'PYMODULE'),
+  ('re._parser',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\_parser.py',
+   'PYMODULE'),
+  ('re._constants',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\_constants.py',
+   'PYMODULE'),
+  ('re._compiler',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\_compiler.py',
+   'PYMODULE'),
+  ('re._casefix',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\_casefix.py',
+   'PYMODULE'),
+  ('re',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\__init__.py',
+   'PYMODULE'),
   ('sre_parse',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\sre_parse.py',
    'PYMODULE'),
-  ('io',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\io.py',
+  ('_collections_abc',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_collections_abc.py',
    'PYMODULE'),
-  ('abc',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\abc.py',
+  ('_weakrefset',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_weakrefset.py',
    'PYMODULE'),
-  ('keyword',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\keyword.py',
+  ('traceback',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\traceback.py',
    'PYMODULE'),
-  ('copyreg',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\copyreg.py',
-   'PYMODULE'),
-  ('reprlib',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\reprlib.py',
+  ('types',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\types.py',
    'PYMODULE'),
   ('locale',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\locale.py',
    'PYMODULE'),
-  ('_weakrefset',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_weakrefset.py',
+  ('collections',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\collections\\__init__.py',
    'PYMODULE'),
   ('encodings.zlib_codec',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\encodings\\zlib_codec.py',
@@ -4506,38 +4497,47 @@
   ('encodings',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\encodings\\__init__.py',
    'PYMODULE'),
-  ('ntpath',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ntpath.py',
+  ('io',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\io.py',
    'PYMODULE'),
-  ('_collections_abc',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\_collections_abc.py',
+  ('reprlib',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\reprlib.py',
    'PYMODULE'),
-  ('re._parser',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\_parser.py',
+  ('genericpath',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\genericpath.py',
    'PYMODULE'),
-  ('re._constants',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\_constants.py',
-   'PYMODULE'),
-  ('re._compiler',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\_compiler.py',
-   'PYMODULE'),
-  ('re._casefix',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\_casefix.py',
-   'PYMODULE'),
-  ('re',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\re\\__init__.py',
-   'PYMODULE'),
-  ('heapq',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\heapq.py',
-   'PYMODULE'),
-  ('linecache',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\linecache.py',
+  ('copyreg',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\copyreg.py',
    'PYMODULE'),
   ('codecs',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\codecs.py',
    'PYMODULE'),
-  ('functools',
-   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\functools.py',
+  ('keyword',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\keyword.py',
+   'PYMODULE'),
+  ('sre_constants',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\sre_constants.py',
+   'PYMODULE'),
+  ('weakref',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\weakref.py',
+   'PYMODULE'),
+  ('ntpath',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ntpath.py',
+   'PYMODULE'),
+  ('operator',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\operator.py',
+   'PYMODULE'),
+  ('enum',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\enum.py',
+   'PYMODULE'),
+  ('posixpath',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\posixpath.py',
+   'PYMODULE'),
+  ('linecache',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\linecache.py',
+   'PYMODULE'),
+  ('heapq',
+   'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\heapq.py',
    'PYMODULE'),
   ('os',
    'C:\\Users\\Daniel\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\os.py',
