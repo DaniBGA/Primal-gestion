@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import date, timedelta
 
-from PyQt6.QtCore import QDate
+from PyQt6.QtCore import QDate, Qt
 from PyQt6.QtWidgets import (
     QComboBox,
     QDateEdit,
@@ -27,6 +27,7 @@ class PagosWidget(QWidget):
     def __init__(self) -> None:
         super().__init__()
         self._suppress_socio_warning = False
+        self.editing_payment_id: int | None = None
         self._build_ui()
         self.cleanup_old_overdue_payments()
         self.load_socios()
@@ -60,9 +61,17 @@ class PagosWidget(QWidget):
         root.addLayout(form)
 
         action_row = QHBoxLayout()
-        save_btn = QPushButton("Registrar pago")
-        save_btn.clicked.connect(self.register_payment)
-        action_row.addWidget(save_btn)
+        self.save_btn = QPushButton("Registrar pago")
+        self.save_btn.clicked.connect(self.register_or_update_payment)
+        action_row.addWidget(self.save_btn)
+
+        load_btn = QPushButton("Cargar pago seleccionado")
+        load_btn.clicked.connect(self.load_selected_payment_for_edit)
+        action_row.addWidget(load_btn)
+
+        cancel_btn = QPushButton("Cancelar edicion")
+        cancel_btn.clicked.connect(self.cancel_edit_mode)
+        action_row.addWidget(cancel_btn)
         action_row.addStretch()
         root.addLayout(action_row)
 
@@ -101,6 +110,9 @@ class PagosWidget(QWidget):
         self.table.setColumnWidth(3, 170)
         self.table.setColumnWidth(4, 120)
         self.table.setEditTriggers(QTableWidget.EditTrigger.NoEditTriggers)
+        self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
+        self.table.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)
+        self.table.cellDoubleClicked.connect(self.load_selected_payment_for_edit)
         root.addWidget(self.table)
 
     def load_socios(self) -> None:
@@ -132,7 +144,7 @@ class PagosWidget(QWidget):
 
         self._suppress_socio_warning = False
 
-    def register_payment(self) -> None:
+    def register_or_update_payment(self) -> None:
         socio_id = self.socio_combo.currentData()
         if socio_id is None:
             QMessageBox.warning(self, "Sin alumnos", "Primero crea un alumno en la pestana Socios.")
@@ -149,17 +161,30 @@ class PagosWidget(QWidget):
             )
             return
 
-        pago = Pago(
-            socio_id=int(socio_id),
-            monto=float(self.monto_input.value()),
-            fecha_pago=fecha_pago,
-            fecha_proximo_pago=fecha_proximo,
-        )
-
         with SessionLocal() as session:
-            session.add(pago)
+            if self.editing_payment_id is None:
+                pago = Pago(
+                    socio_id=int(socio_id),
+                    monto=float(self.monto_input.value()),
+                    fecha_pago=fecha_pago,
+                    fecha_proximo_pago=fecha_proximo,
+                )
+                session.add(pago)
+            else:
+                pago = session.get(Pago, int(self.editing_payment_id))
+                if not pago:
+                    QMessageBox.warning(self, "No encontrado", "El pago seleccionado ya no existe.")
+                    self.cancel_edit_mode()
+                    return
+
+                pago.socio_id = int(socio_id)
+                pago.monto = float(self.monto_input.value())
+                pago.fecha_pago = fecha_pago
+                pago.fecha_proximo_pago = fecha_proximo
+
             session.commit()
 
+        self.cancel_edit_mode()
         self.cleanup_old_overdue_payments()
         self.load_payments_table()
 
@@ -220,7 +245,9 @@ class PagosWidget(QWidget):
 
         self.table.setRowCount(len(filtered_rows))
         for row_idx, (pago, socio, status) in enumerate(filtered_rows):
-            self.table.setItem(row_idx, 0, QTableWidgetItem(socio.nombre_apellido))
+            socio_item = QTableWidgetItem(socio.nombre_apellido)
+            socio_item.setData(Qt.ItemDataRole.UserRole, int(pago.id))
+            self.table.setItem(row_idx, 0, socio_item)
             self.table.setItem(row_idx, 1, QTableWidgetItem(f"$ {pago.monto:,.2f}"))
             self.table.setItem(row_idx, 2, QTableWidgetItem(pago.fecha_pago.strftime("%Y-%m-%d")))
             self.table.setItem(
@@ -235,6 +262,50 @@ class PagosWidget(QWidget):
         self.table.setColumnWidth(2, 140)
         self.table.setColumnWidth(3, 170)
         self.table.setColumnWidth(4, 120)
+
+    def load_selected_payment_for_edit(self, _row: int | None = None, _column: int | None = None) -> None:
+        row = self.table.currentRow()
+        if row < 0:
+            QMessageBox.information(self, "Sin seleccion", "Selecciona un pago de la tabla.")
+            return
+
+        first_item = self.table.item(row, 0)
+        if first_item is None:
+            return
+
+        payment_id = first_item.data(Qt.ItemDataRole.UserRole)
+        if payment_id is None:
+            QMessageBox.warning(self, "Dato invalido", "No se pudo identificar el pago seleccionado.")
+            return
+
+        with SessionLocal() as session:
+            pago = session.get(Pago, int(payment_id))
+
+        if not pago:
+            QMessageBox.warning(self, "No encontrado", "El pago seleccionado ya no existe.")
+            self.load_payments_table()
+            return
+
+        socio_index = self.socio_combo.findData(int(pago.socio_id))
+        if socio_index >= 0:
+            self.socio_combo.setCurrentIndex(socio_index)
+
+        self.monto_input.setValue(float(pago.monto))
+        self.fecha_pago_input.setDate(QDate(pago.fecha_pago.year, pago.fecha_pago.month, pago.fecha_pago.day))
+        self.fecha_proximo_input.setDate(
+            QDate(
+                pago.fecha_proximo_pago.year,
+                pago.fecha_proximo_pago.month,
+                pago.fecha_proximo_pago.day,
+            )
+        )
+
+        self.editing_payment_id = int(pago.id)
+        self.save_btn.setText("Guardar cambios")
+
+    def cancel_edit_mode(self) -> None:
+        self.editing_payment_id = None
+        self.save_btn.setText("Registrar pago")
 
     @staticmethod
     def _compute_status(next_payment: date, today: date, upcoming_limit: date) -> str:

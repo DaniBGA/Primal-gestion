@@ -45,6 +45,8 @@ class Ejercicio(Base):
     duracion_segundos: Mapped[int] = mapped_column(Integer, nullable=False)
     descanso_segundos: Mapped[int] = mapped_column(Integer, nullable=False, default=30)
     rondas: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    series: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    descanso_entre_series_segundos: Mapped[int] = mapped_column(Integer, nullable=False, default=60)
     descripcion: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
     sesiones: Mapped[list["SesionEntrenamiento"]] = relationship(

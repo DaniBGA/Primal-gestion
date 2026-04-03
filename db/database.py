@@ -39,6 +39,18 @@ def _apply_sqlite_migrations() -> None:
                 text("ALTER TABLE ejercicios ADD COLUMN rondas INTEGER NOT NULL DEFAULT 1")
             )
 
+        if "series" not in columns:
+            conn.execute(
+                text("ALTER TABLE ejercicios ADD COLUMN series INTEGER NOT NULL DEFAULT 1")
+            )
+
+        if "descanso_entre_series_segundos" not in columns:
+            conn.execute(
+                text(
+                    "ALTER TABLE ejercicios ADD COLUMN descanso_entre_series_segundos INTEGER NOT NULL DEFAULT 60"
+                )
+            )
+
 
 def init_db() -> None:
     # Import models before create_all so metadata is fully registered.
